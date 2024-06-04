@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    {%extends 'base.html'%}
+    {% block title %}student{% endblock %}
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    {%block content%}
+    <h3>{{student.first_name}} {{student.last_name}}</h3>
+    <p>Email id:{{student.email_id}}</p>  
+    <p>PHONE NUMBER:{{student.phone_number}}</p>
+    <p>GENDER:{{student.student_gender}}</p>
+    <p>ADDRESS:{{student.student_address}}</p>
+    {%for department in student.student_department.all%}
+    <em>{{department}}</em>
+    {% endfor %}
+    <p>DOB:{{student.date_of_birth}}</p>
+    {%endblock%}
+</body>
+
+</html>
